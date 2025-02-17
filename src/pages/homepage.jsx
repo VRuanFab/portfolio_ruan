@@ -1,5 +1,6 @@
 import '../css/pages.css'
 import Conhecimentos from "./conhecimentos"
+import Projetos from './projetos'
 
 export default function HomePage() {
     
@@ -28,6 +29,10 @@ export default function HomePage() {
                 <Conhecimentos/>
             </div>
 
+
+            <div className='snap-center h-screen'>
+                <Projetos/>
+            </div>
         </div>
         </>
     )
