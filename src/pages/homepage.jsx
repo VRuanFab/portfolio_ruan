@@ -1,5 +1,4 @@
-import React from "react"
-import '../index.css'
+import '../css/pages.css'
 import Conhecimentos from "./conhecimentos"
 
 export default function HomePage() {
