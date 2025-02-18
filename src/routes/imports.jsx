@@ -1,10 +1,10 @@
-import HomePage from "../pages/homepage"
+import MainPage from "../pages/mainPage"
 
 export const rotas = [
     //HOMEPAGE//
     {
-        name: "homepage",
+        name: "mainPage",
         path: "/portfolio_ruan",
-        element: <HomePage/>
+        element: <MainPage/>
     }
 ]

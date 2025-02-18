@@ -18,11 +18,11 @@ export default function Habilidades(){
                 <h1 className="text-[5rem]">Habilidades</h1>
             </div>
 
-            <div className="w-full flex gap-4">
+            <div className="w-full h-[40rem] flex gap-10 justify-center items-center">
 
                 <Habilidade_componente nome="javascript" img={javascript_logo}/>
 
-                <Habilidade_componente nome="Python" img={python_logo} className='python_svg'/>
+                <Habilidade_componente nome="Python" img={python_logo}/>
 
 
                 <Habilidade_componente nome="React" img={react_logo}/>
