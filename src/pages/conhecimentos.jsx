@@ -1,13 +1,13 @@
 import Habilidade_componente from "../components/habilidade_component";
-import { IoLogoJavascript,
-        IoLogoPython,
-        IoLogoReact,
-        IoLogoNodejs,
-        IoLogoGithub,
-        IoLogoCss3
-    } from "react-icons/io5";
-
-import { SiTypescript } from "react-icons/si";
+import '../css/svg_styles.css'
+import python_logo from '../assets/images/python_logo.svg'
+import javascript_logo from '../assets/images/javascript_logo.svg'
+import git_logo from '../assets/images/git_logo.svg'
+import typescript_logo from '../assets/images/typescript_logo.svg'
+import nodejs_logo from '../assets/images/nodejs_logo.svg'
+import sql_logo from '../assets/images/sql_logo.svg'
+import react_logo from '../assets/images/react_logo.svg'
+import css_logo from '../assets/images/css_logo.svg'
 
 export default function Habilidades(){
 
@@ -18,21 +18,24 @@ export default function Habilidades(){
                 <h1 className="text-[5rem]">Habilidades</h1>
             </div>
 
-            <div className="w-full flex">
+            <div className="w-full flex gap-4">
 
-                <Habilidade_componente nome="javascript" img={<IoLogoJavascript className="w-full h-full hover:fill-yellow-400"/>}/>
+                <Habilidade_componente nome="javascript" img={javascript_logo}/>
 
-                <Habilidade_componente nome="javascript" img={<IoLogoPython className="w-full h-full hover:fill-yellow-400"/>}/>
+                <Habilidade_componente nome="Python" img={python_logo} className='python_svg'/>
 
-                <Habilidade_componente nome="javascript" img={<IoLogoReact className="w-full h-full hover:fill-yellow-400"/>}/>
 
-                <Habilidade_componente nome="javascript" img={<IoLogoNodejs className="w-full h-full hover:fill-yellow-400"/>}/>
+                <Habilidade_componente nome="React" img={react_logo}/>
 
-                <Habilidade_componente nome="javascript" img={<IoLogoGithub className="w-full h-full hover:fill-yellow-400"/>}/>
+                <Habilidade_componente nome="Node Js" img={nodejs_logo}/>
 
-                <Habilidade_componente nome="javascript" img={<IoLogoCss3 className="w-full h-full hover:fill-yellow-400"/>}/>
+                <Habilidade_componente nome="Git" img={git_logo}/>
 
-                <Habilidade_componente nome="javascript" img={<SiTypescript className="w-full h-full hover:fill-yellow-400"/>}/>
+                <Habilidade_componente nome="CSS3" img={css_logo}/>
+
+                <Habilidade_componente nome="Typescript" img={typescript_logo}/>
+
+                <Habilidade_componente nome="Typescript" img={sql_logo}/>
 
             </div>
         </div>
