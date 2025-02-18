@@ -35,7 +35,7 @@ export default function Habilidades(){
 
                 <Habilidade_componente nome="Typescript" img={typescript_logo}/>
 
-                <Habilidade_componente nome="Typescript" img={sql_logo}/>
+                <Habilidade_componente nome="Sql" img={sql_logo}/>
 
             </div>
         </div>
