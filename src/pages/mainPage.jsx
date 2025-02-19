@@ -5,23 +5,26 @@ import HomePage from './homepage'
 
 export default function MainPage() {
     
+    const ArrPages = [
+                        <HomePage/>,
+                        <Habilidades/>,
+                        <Projetos/>
+                    ]
 
     return(
         <>
         <div className="snap-y snap-mandatory h-screen overflow-y-scroll">
 
-            <div className="snap-center h-screen">
-                <HomePage/>
-            </div>
+            {
+                ArrPages.map((pagina) => {
+                    return (
+                        <div className='snap-center h-screen'>
+                            {pagina}
+                        </div>
+                    )
+                })
+            }
 
-            <div className="snap-center h-screen">
-                <Habilidades/>
-            </div>
-
-
-            <div className='snap-center h-screen'>
-                <Projetos/>
-            </div>
         </div>
         </>
     )
