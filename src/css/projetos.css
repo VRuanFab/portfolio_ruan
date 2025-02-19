@@ -1,0 +1,12 @@
+
+.closeToMain{
+    filter: opacity(65%);
+}
+
+.closeToMain2{
+    filter: opacity(40%);
+}
+
+.notClose{
+    filter: opacity(0%);
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { HeadProject, SmallPhoto } from "../../components/projetos_component";
 import { dadosProjetos } from "./dadosProjeto";
+import '../../css/projetos.css'
 
 
 export default function Projetos() {
@@ -37,6 +38,34 @@ export default function Projetos() {
         setProjetoSelecionado(dadosProjetos[indexEsquerda].nome)
     }
 
+    function facilitadorEstilo(indice) {
+        const indexDesejado = dadosProjetos.findIndex((item) => {
+            return item.nome === objProjeto.nome
+        })
+
+        if (indice - 1 === indexDesejado){
+            return 'closeToMain relative top-1'
+        }
+
+        else if (indice - 2 === indexDesejado){
+            return 'closeToMain2 relative top-2'
+        }
+
+        else if (indice + 1 === indexDesejado){
+            return 'closeToMain relative top-1'
+        }
+
+        else if (indice + 2 === indexDesejado){
+            return 'closeToMain2 relative top-2'
+        }
+
+        else{
+            return 'notClose'
+        }
+    }
+
+    console.log(facilitadorEstilo(1))
+
     return (
         <div className="w-full h-full flex flex-col py-6 gap-5">
 
@@ -50,22 +79,22 @@ export default function Projetos() {
 
                 <div className="flex w-full">
 
-                    <p onClick={moveLeft}>bt left teste</p>
+                <p onClick={moveLeft}>bt left teste</p>
+                    <div className="overflow-scroll flex justify-center gap-20 bg-green-500 py-4">
 
-                    <div className="overflow-scroll flex gap-20">
                         {
                             dadosProjetos.map((item, indice) => {
                                 return(
-                                    <div key={indice} className={item.nome === objProjeto.nome? '':`opacity-50`} onClick={() => {setProjetoSelecionado(item.nome)}}>
+                                    <div key={indice} className={item.nome === objProjeto.nome? '':facilitadorEstilo(indice)} onClick={() => {setProjetoSelecionado(item.nome)}}>
                                         <SmallPhoto imagem={item.icon}/>
                                     </div>
                                 )
                             })
                         }
-                    </div>
 
-                    <p onClick={moveRight}>bt right teste</p>
-                    
+                    </div>
+                <p onClick={moveRight}>bt right teste</p>
+
                 </div>
 
             </div>

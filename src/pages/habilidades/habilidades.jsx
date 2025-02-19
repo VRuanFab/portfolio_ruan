@@ -12,7 +12,7 @@ export default function Habilidades(){
                 <h1 className="text-[5rem]">Habilidades</h1>
             </div>
 
-            <div className="w-full h-[40rem] flex gap-10 justify-center items-center">
+            <div className="w-full h-[70%] flex gap-10 justify-center items-center">
                 {
                     dadosConhecimentos.map((item) => {
                         return (
