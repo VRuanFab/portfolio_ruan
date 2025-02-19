@@ -7,10 +7,21 @@ export function HeadProject ({imagem, descricao}) {
         <div className="grid grid-cols-3 h-full">
             
             <div className="col-span-2 h-full place-content-center bg-blue-500">
-                imagem grandona
+                {
+                imagem?
+                imagem.map((item, indice) => {
+                    return (
+                        <div key={indice}>
+                            {item}
+                        </div>
+                    )
+                })
+                :
+                ''
+                }
             </div>
 
-            <div>
+            <div className="">
                 <h3>
                     {descricao}
                 </h3>
@@ -25,7 +36,7 @@ export function SmallPhoto({imagem}) {
 
 
     return(
-        <div>
+        <div className="h-22 bg-yellow-500">
             {imagem}
         </div>
     )
