@@ -44,19 +44,19 @@ export default function Projetos() {
         })
 
         if (indice - 1 === indexDesejado){
-            return 'closeToMain relative top-1'
+            return 'closeToMain rightCarousel relative top-1 rotate-[2deg]'
         }
 
         else if (indice - 2 === indexDesejado){
-            return 'closeToMain2 relative top-2'
+            return 'closeToMain2 rightCarousel relative top-5 rotate-[5deg]'
         }
 
         else if (indice + 1 === indexDesejado){
-            return 'closeToMain relative top-1'
+            return 'closeToMain leftCarousel relative top-1 rotate-[-2deg]'
         }
 
         else if (indice + 2 === indexDesejado){
-            return 'closeToMain2 relative top-2'
+            return 'closeToMain2 leftCarousel relative top-5 rotate-[-5deg]'
         }
 
         else{
