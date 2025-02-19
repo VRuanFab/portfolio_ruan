@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { HeadProject, SmallPhoto } from "../../components/projetos_component";
 import { dadosProjetos } from "./dadosProjeto";
+import { MdArrowCircleRight } from "react-icons/md";
+import { MdArrowCircleLeft } from "react-icons/md";
 import '../../css/projetos.css'
 
 
@@ -60,7 +62,7 @@ export default function Projetos() {
         }
 
         else{
-            return 'notClose'
+            return 'notClose hidden'
         }
     }
 
@@ -77,10 +79,13 @@ export default function Projetos() {
 
                 <HeadProject imagem={objProjeto.imagem} descricao={objProjeto.descricao}/>
 
-                <div className="flex w-full">
+                <div className="flex justify-center w-full gap-6">
 
-                <p onClick={moveLeft}>bt left teste</p>
-                    <div className="overflow-scroll flex justify-center gap-20 bg-green-500 py-4">
+                <button onClick={moveLeft} className="h-fit self-center hover:cursor-pointer">
+                    <MdArrowCircleLeft className="text-[45px] hover:fill-white"/>
+                </button>
+
+                    <div className="overflow-hidden flex justify-center gap-20 py-4 px-3">
 
                         {
                             dadosProjetos.map((item, indice) => {
@@ -93,7 +98,10 @@ export default function Projetos() {
                         }
 
                     </div>
-                <p onClick={moveRight}>bt right teste</p>
+
+                <button onClick={moveRight} className="h-fit self-center hover:cursor-pointer">
+                    <MdArrowCircleRight className="text-[45px] hover:fill-white"/>
+                </button>
 
                 </div>
 
