@@ -1,6 +1,6 @@
 import '../css/pages.css'
 import Habilidades from './conhecimentos'
-import Projetos from './projetos'
+import Projetos from './projetos/projetos'
 import HomePage from './homepage'
 
 export default function MainPage() {
