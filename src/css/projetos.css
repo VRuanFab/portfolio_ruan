@@ -1,12 +1,76 @@
+.mainProject{
+    z-index: 30;
+    position: relative;
+}
+
+.mainMoveRight{
+    animation: mainMoveRight 1s infinite;
+}
 
 .closeToMain{
     filter: opacity(65%);
+    z-index: 20;
+}
+
+.leftCarousel.closeToMain{
+    bottom: -0.3rem;
+    /* animation: closeLeftToRight 1s infinite */
 }
 
 .closeToMain2{
     filter: opacity(40%);
+    z-index: 10;
 }
 
 .notClose{
     filter: opacity(0%);
+}
+
+@keyframes mainMoveLeft {
+    from {
+        z-index: 30;
+        position: relative;
+        top: 0px;
+        right: 0px;
+    }
+
+    to {
+        z-index: 20;
+        position: relative;
+        top: 0.25rem;
+        right: 12rem;
+        rotate: -2deg;
+    }
+}
+@keyframes mainMoveRight{
+    from {
+        z-index: 30;
+        position: relative;
+        top: 0px;
+        left: 0px;
+    }
+
+    to {
+        z-index: 20;
+        position: relative;
+        top: 0.25rem;
+        left: 12rem;
+        rotate: 2deg;
+    }
+}
+
+@keyframes closeLeftToRight {
+    from {
+        z-index: 20;
+        position: relative;
+        bottom: -0.3rem;
+        left: 0rem;
+    }
+    to {
+        z-index: 30;
+        position: relative;
+        bottom: 0.20rem;
+        left: 12rem;
+        rotate: 0deg;
+    }
 }

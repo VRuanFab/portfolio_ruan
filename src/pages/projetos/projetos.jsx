@@ -47,7 +47,7 @@ export default function Projetos() {
         close_right1: 'closeToMain rightCarousel relative top-1 rotate-[2deg]',
         close_right2: 'closeToMain2 rightCarousel relative top-5 rotate-[5deg]',
 
-        close_left1: 'closeToMain leftCarousel relative top-1 rotate-[-2deg]',
+        close_left1: 'closeToMain leftCarousel relative rotate-[-2deg]',
         close_left2: 'closeToMain2 leftCarousel relative top-5 rotate-[-5deg]',
 
         far: 'notClose hidden'
@@ -119,7 +119,7 @@ export default function Projetos() {
                     <MdArrowCircleLeft className="text-[45px] hover:fill-white"/>
                 </button>
 
-                    <div className="overflow-hidden flex justify-center gap-20 py-4 px-3">
+                    <div className="overflow-hidden flex justify-center gap-20 py-4 px-3 relative">
 
                         {
                             dadosProjetos.map((item, indice) => {
@@ -140,7 +140,7 @@ export default function Projetos() {
                                         ''
                                     }
 
-                                    <div key={indice} className={item.nome === objProjeto.nome? '':facilitadorEstilo(indice)} onClick={() => {setProjetoSelecionado(item.nome)}}>
+                                    <div key={indice} className={item.nome === objProjeto.nome? 'mainProject':facilitadorEstilo(indice)} onClick={() => {setProjetoSelecionado(item.nome)}}>
                                         <SmallPhoto imagem={item.icon}/>
                                     </div>
 
