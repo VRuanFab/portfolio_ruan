@@ -36,7 +36,7 @@ export function SmallPhoto({imagem}) {
 
 
     return(
-        <div className="h-22 bg-yellow-500">
+        <div className="h-[5rem]">
             {imagem}
         </div>
     )

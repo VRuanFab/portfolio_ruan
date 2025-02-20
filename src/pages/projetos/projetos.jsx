@@ -44,10 +44,10 @@ export default function Projetos() {
     })
 
     const objStyle= {
-        close_right1: 'closeToMain rightCarousel relative top-1 rotate-[2deg]',
+        close_right1: 'closeToMain rightCarousel relative',
         close_right2: 'closeToMain2 rightCarousel relative top-5 rotate-[5deg]',
 
-        close_left1: 'closeToMain leftCarousel relative rotate-[-2deg]',
+        close_left1: 'closeToMain leftCarousel relative',
         close_left2: 'closeToMain2 leftCarousel relative top-5 rotate-[-5deg]',
 
         far: 'notClose hidden'

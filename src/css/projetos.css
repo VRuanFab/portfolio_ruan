@@ -1,6 +1,7 @@
 .mainProject{
     z-index: 30;
     position: relative;
+    background: yellow;
 }
 
 .mainMoveRight{
@@ -10,11 +11,24 @@
 .closeToMain{
     filter: opacity(65%);
     z-index: 20;
+    height: 0;
+    width: 0;
 }
 
 .leftCarousel.closeToMain{
     bottom: -0.3rem;
+    border-top: 0.4rem solid transparent;
+    border-bottom: 4.6rem solid;
+    border-right: 5rem solid;
+    
     /* animation: closeLeftToRight 1s infinite */
+}
+
+.rightCarousel.closeToMain{
+    bottom: -0.3rem;
+    border-top: 0.4rem solid transparent;
+    border-bottom: 4.6rem solid;
+    border-left: 5rem solid;
 }
 
 .closeToMain2{
