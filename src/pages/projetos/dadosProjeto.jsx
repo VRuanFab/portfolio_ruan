@@ -7,7 +7,7 @@ export const dadosProjetos = [
                     'img2',
                     'img3'
                 ],
-        icon: 'img_chat_online'
+        icon: 'primeira_img'
     },
     {
         nome: 'Bot Whatsapp',
@@ -117,7 +117,7 @@ export const dadosProjetos = [
                     'img2',
                     'img3'
                 ],
-        icon: 'img_bot_whats'
+        icon: 'ultima_img'
     },
 
     

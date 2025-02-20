@@ -9,7 +9,6 @@ import '../../css/projetos.css'
 export default function Projetos() {
 
     const [projetoSelecionado, setProjetoSelecionado] = useState('Chat Online')
-
     const [objProjeto, setObjProjeto] = useState([])
     
     useEffect(() => {
@@ -40,33 +39,68 @@ export default function Projetos() {
         setProjetoSelecionado(dadosProjetos[indexEsquerda].nome)
     }
 
+    const indexDesejado = dadosProjetos.findIndex((item) => {
+        return item.nome === objProjeto.nome
+    })
+
+    const objStyle= {
+        close_right1: 'closeToMain rightCarousel relative top-1 rotate-[2deg]',
+        close_right2: 'closeToMain2 rightCarousel relative top-5 rotate-[5deg]',
+
+        close_left1: 'closeToMain leftCarousel relative top-1 rotate-[-2deg]',
+        close_left2: 'closeToMain2 leftCarousel relative top-5 rotate-[-5deg]',
+
+        far: 'notClose hidden'
+    }
+
     function facilitadorEstilo(indice) {
-        const indexDesejado = dadosProjetos.findIndex((item) => {
-            return item.nome === objProjeto.nome
-        })
+        switch (indexDesejado){
+            case indice - 1:
+                return objStyle.close_right1;
 
-        if (indice - 1 === indexDesejado){
-            return 'closeToMain rightCarousel relative top-1 rotate-[2deg]'
-        }
+            case indice - 2:
+                return objStyle.close_right2;
 
-        else if (indice - 2 === indexDesejado){
-            return 'closeToMain2 rightCarousel relative top-5 rotate-[5deg]'
-        }
+            case indice + 1:
+                return objStyle.close_left1;
 
-        else if (indice + 1 === indexDesejado){
-            return 'closeToMain leftCarousel relative top-1 rotate-[-2deg]'
-        }
+            case indice + 2:
+                return objStyle.close_left2;
 
-        else if (indice + 2 === indexDesejado){
-            return 'closeToMain2 leftCarousel relative top-5 rotate-[-5deg]'
-        }
-
-        else{
-            return 'notClose hidden'
+            default:
+                return objStyle.far
         }
     }
 
-    console.log(facilitadorEstilo(1))
+    function beginIcon(whichElement){
+        if (indexDesejado === 0  && whichElement === 0){
+            return objStyle.close_left2
+        }
+        else if (indexDesejado === 0 && whichElement === 1){
+            return objStyle.close_left1
+        }
+        else if (indexDesejado === 1  && whichElement === 1){
+            return objStyle.close_left2
+        }
+        else {
+            return objStyle.far
+        }
+    }
+
+    function endIcon(whichElement){
+        if (indexDesejado === dadosProjetos.length - 1 && whichElement == 0){
+            return objStyle.close_right2
+        }
+        else if (indexDesejado === dadosProjetos.length - 1 && whichElement == 1){
+            return objStyle.close_right1
+        }
+        else if (indexDesejado === dadosProjetos.length - 2 && whichElement == 1){
+            return objStyle.close_right2
+        }
+        else {
+            return objStyle.far
+        }
+    }
 
     return (
         <div className="w-full h-full flex flex-col py-6 gap-5">
@@ -90,9 +124,41 @@ export default function Projetos() {
                         {
                             dadosProjetos.map((item, indice) => {
                                 return(
+                                    <>
+                                    {
+                                        (indice - 1 + dadosProjetos.length) % dadosProjetos.length === dadosProjetos.length - 1?
+                                        <>
+                                        <div key={dadosProjetos.length + 1} className={beginIcon(0)} onClick={() => {setProjetoSelecionado(dadosProjetos[dadosProjetos.length - 2].nome)}}>
+                                            <SmallPhoto imagem={dadosProjetos[dadosProjetos.length - 2].icon}/>
+                                        </div>
+
+                                        <div key={dadosProjetos.length + 2} className={beginIcon(1)} onClick={() => {setProjetoSelecionado(dadosProjetos[dadosProjetos.length - 1].nome)}}>
+                                            <SmallPhoto imagem={dadosProjetos[dadosProjetos.length - 1].icon}/>
+                                        </div>
+                                        </>
+                                        :
+                                        ''
+                                    }
+
                                     <div key={indice} className={item.nome === objProjeto.nome? '':facilitadorEstilo(indice)} onClick={() => {setProjetoSelecionado(item.nome)}}>
                                         <SmallPhoto imagem={item.icon}/>
                                     </div>
+
+                                    {
+                                        (indice + 1) % dadosProjetos.length === 0?
+                                        <>
+                                        <div key={dadosProjetos.length + 3} className={endIcon(1)} onClick={() => {setProjetoSelecionado(dadosProjetos[0].nome)}}>
+                                            <SmallPhoto imagem={dadosProjetos[0].icon}/>
+                                        </div>
+                                        
+                                        <div key={dadosProjetos.length + 4} className={endIcon(0)} onClick={() => {setProjetoSelecionado(dadosProjetos[1].nome)}}>
+                                            <SmallPhoto imagem={dadosProjetos[1].icon}/>
+                                        </div>
+                                        </>
+                                        :
+                                        ''
+                                    }
+                                    </>
                                 )
                             })
                         }
