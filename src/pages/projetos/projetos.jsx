@@ -9,18 +9,25 @@ import '../../css/projetos.css'
 export default function Projetos() {
 
     const [projetoSelecionado, setProjetoSelecionado] = useState('Chat Online')
+    const [movingRight, setMovingRight] = useState(false)
+    const [movingLeft, setMovingLeft] = useState(false)
     const [objProjeto, setObjProjeto] = useState([])
     
     useEffect(() => {
+        setTimeout(() => {
         const projeto_exibido = dadosProjetos.find((item) => {
             return item.nome === projetoSelecionado
         })
 
+        
         setObjProjeto(projeto_exibido)
-
+        setMovingLeft(false)
+        setMovingRight(false)
+        }, 1000)
     }, [projetoSelecionado])
 
     function moveRight(){
+        setMovingRight(true)
         const indexAtual = dadosProjetos.findIndex((item) => {
             return item.nome === projetoSelecionado
         })
@@ -30,6 +37,7 @@ export default function Projetos() {
     }
 
     function moveLeft(){
+        setMovingLeft(true)
         const indexAtual = dadosProjetos.findIndex((item) => {
             return item.nome === projetoSelecionado
         })
@@ -45,10 +53,10 @@ export default function Projetos() {
 
     const objStyle= {
         close_right1: 'closeToMain rightCarousel relative',
-        close_right2: 'closeToMain2 rightCarousel relative top-5 rotate-[5deg]',
+        close_right2: 'closeToMain2 rightCarousel relative',
 
         close_left1: 'closeToMain leftCarousel relative',
-        close_left2: 'closeToMain2 leftCarousel relative top-5 rotate-[-5deg]',
+        close_left2: 'closeToMain2 leftCarousel relative',
 
         far: 'notClose hidden'
     }
@@ -128,11 +136,11 @@ export default function Projetos() {
                                     {
                                         (indice - 1 + dadosProjetos.length) % dadosProjetos.length === dadosProjetos.length - 1?
                                         <>
-                                        <div key={dadosProjetos.length + 1} className={beginIcon(0)} onClick={() => {setProjetoSelecionado(dadosProjetos[dadosProjetos.length - 2].nome)}}>
+                                        <div key={dadosProjetos.length + 1} className={`${beginIcon(0)}`} onClick={() => {setProjetoSelecionado(dadosProjetos[dadosProjetos.length - 2].nome)}}>
                                             <SmallPhoto imagem={dadosProjetos[dadosProjetos.length - 2].icon}/>
                                         </div>
 
-                                        <div key={dadosProjetos.length + 2} className={beginIcon(1)} onClick={() => {setProjetoSelecionado(dadosProjetos[dadosProjetos.length - 1].nome)}}>
+                                        <div key={dadosProjetos.length + 2} className={`${beginIcon(1)} ${movingRight? 'leftToRightCarousel1':''}`} onClick={() => {setProjetoSelecionado(dadosProjetos[dadosProjetos.length - 1].nome)}}>
                                             <SmallPhoto imagem={dadosProjetos[dadosProjetos.length - 1].icon}/>
                                         </div>
                                         </>
@@ -140,18 +148,18 @@ export default function Projetos() {
                                         ''
                                     }
 
-                                    <div key={indice} className={item.nome === objProjeto.nome? 'mainProject':facilitadorEstilo(indice)} onClick={() => {setProjetoSelecionado(item.nome)}}>
+                                    <div key={indice} className={item.nome === objProjeto.nome? movingRight? 'mainMoveRight': movingLeft? 'mainMoveLeft':'' + 'mainProject':`${facilitadorEstilo(indice)} ${movingRight? 'leftToRightCarousel1':''}`} onClick={() => {setProjetoSelecionado(item.nome)}}>
                                         <SmallPhoto imagem={item.icon}/>
                                     </div>
 
                                     {
                                         (indice + 1) % dadosProjetos.length === 0?
                                         <>
-                                        <div key={dadosProjetos.length + 3} className={endIcon(1)} onClick={() => {setProjetoSelecionado(dadosProjetos[0].nome)}}>
+                                        <div key={dadosProjetos.length + 3} className={`${endIcon(1)}`} onClick={() => {setProjetoSelecionado(dadosProjetos[0].nome)}}>
                                             <SmallPhoto imagem={dadosProjetos[0].icon}/>
                                         </div>
                                         
-                                        <div key={dadosProjetos.length + 4} className={endIcon(0)} onClick={() => {setProjetoSelecionado(dadosProjetos[1].nome)}}>
+                                        <div key={dadosProjetos.length + 4} className={`${endIcon(0)}`} onClick={() => {setProjetoSelecionado(dadosProjetos[1].nome)}}>
                                             <SmallPhoto imagem={dadosProjetos[1].icon}/>
                                         </div>
                                         </>

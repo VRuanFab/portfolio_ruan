@@ -1,90 +1,162 @@
-.mainProject{
-    z-index: 30;
-    position: relative;
-    background: yellow;
-}
-
-.mainMoveRight{
-    animation: mainMoveRight 1s infinite;
-}
-
-.closeToMain{
-    filter: opacity(65%);
-    z-index: 20;
-    height: 0;
-    width: 0;
-}
-
-.leftCarousel.closeToMain{
-    bottom: -0.3rem;
-    border-top: 0.4rem solid transparent;
-    border-bottom: 4.6rem solid;
-    border-right: 5rem solid;
-    
-    /* animation: closeLeftToRight 1s infinite */
-}
-
-.rightCarousel.closeToMain{
-    bottom: -0.3rem;
-    border-top: 0.4rem solid transparent;
-    border-bottom: 4.6rem solid;
-    border-left: 5rem solid;
-}
-
-.closeToMain2{
-    filter: opacity(40%);
-    z-index: 10;
-}
-
 .notClose{
     filter: opacity(0%);
 }
 
-@keyframes mainMoveLeft {
-    from {
+/******MAIN******/
+    .mainProject{
         z-index: 30;
         position: relative;
-        top: 0px;
-        right: 0px;
+        background: yellow;
     }
 
-    to {
-        z-index: 20;
-        position: relative;
-        top: 0.25rem;
-        right: 12rem;
-        rotate: -2deg;
+    .mainMoveRight{
+        animation: mainMoveRight 1s normal;
     }
-}
-@keyframes mainMoveRight{
-    from {
-        z-index: 30;
-        position: relative;
-        top: 0px;
-        left: 0px;
+    .mainMoveLeft{
+        animation: mainMoveLeft 1s normal;
     }
 
-    to {
-        z-index: 20;
-        position: relative;
-        top: 0.25rem;
-        left: 12rem;
-        rotate: 2deg;
-    }
-}
+    @keyframes mainMoveLeft {
+        from {
+            z-index: 30;
+            position: relative;
+            top: 0px;
+            right: 0px;
+        }
 
-@keyframes closeLeftToRight {
-    from {
+        to {
+            z-index: 20;
+            position: relative;
+            top: 0.25rem;
+            right: 12rem;
+            rotate: -2deg;
+        }
+    }
+    @keyframes mainMoveRight{
+        from {
+            z-index: 30;
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+
+        to {
+            z-index: 20;
+            position: relative;
+            top: 0.25rem;
+            left: 12rem;
+            rotate: 2deg;
+        }
+    }
+/**************************************/
+
+
+/****** CLOSE1 ******/
+    .closeToMain{
+        filter: opacity(65%);
         z-index: 20;
-        position: relative;
-        bottom: -0.3rem;
-        left: 0rem;
+        height: 0;
+        width: 0;
     }
-    to {
-        z-index: 30;
-        position: relative;
-        bottom: 0.20rem;
-        left: 12rem;
-        rotate: 0deg;
+
+
+        /* LEFT */
+        .leftCarousel.closeToMain{
+            bottom: -0.1rem;
+            border-top: 0.4rem solid transparent;
+            border-bottom: 4.6rem solid;
+            border-right: 5rem solid;
+        }
+        
+        .leftCarousel.closeToMain.leftToRightCarousel1{
+            transition: all;
+            animation: closeLeftToRight 1s normal
+        }
+        @keyframes closeLeftToRight {
+            from {
+                z-index: 20;
+                position: relative;
+                bottom: -0.3rem;
+                left: 0rem;
+
+                bottom: -0.1rem;
+                border-top: 0.4rem solid transparent;
+                border-bottom: 4.6rem solid;
+                border-right: 5rem solid;
+            }
+            to {
+                z-index: 30;
+                position: relative;
+                bottom: 0.20rem;
+                left: 12rem;
+
+                bottom: 0rem;
+                border-top: 3rem solid;
+                border-bottom: 2rem solid;
+                border-right: 4rem solid;
+                border-left: 4rem solid;
+            }
+        }
+        /*********/
+
+
+        /* RIGHT */
+        .rightCarousel.closeToMain{
+            bottom: -0.1rem;
+            border-top: 0.4rem solid transparent;
+            border-bottom: 4.6rem solid;
+            border-left: 5rem solid;
+            
+            /* animation: closeLeftToRight 1s infinite */
+        }
+
+        @keyframes closeRightToLeft {
+            from {
+                z-index: 20;
+                position: relative;
+                bottom: -0.3rem;
+                right: 0rem;
+            }
+            to {
+                z-index: 30;
+                position: relative;
+                bottom: 0.20rem;
+                right: 12rem;
+                rotate: 0deg;
+            }
+        }
+        /*********/
+/**************************************/
+
+
+/****** CLOSE2 ******/
+    .closeToMain2{
+        filter: opacity(40%);
+        z-index: 10;
+        height: 0;
+        width: 0;
     }
-}
+
+        /* LEFT */
+        .leftCarousel.closeToMain2{
+            bottom: -1rem;
+            left: 1rem;
+            border-top: 0.5rem solid transparent;
+            border-bottom: 3.2rem solid;
+            border-right: 3rem solid;
+            
+            /* animation: closeLeftToRight 1s infinite */
+        }
+        /*********/
+
+
+        /* RIGHT */
+        .rightCarousel.closeToMain2{
+            bottom: -1rem;
+            right: 1rem;
+            border-top: 0.5rem solid transparent;
+            border-bottom: 3.2rem solid;
+            border-left: 3rem solid;
+        }
+        /*********/
+/**************************************/
