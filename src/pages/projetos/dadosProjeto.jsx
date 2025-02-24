@@ -1,3 +1,5 @@
+import chat_online from '../../assets/images/projetos/chat_online.png'
+
 export const dadosProjetos = [
     {
         nome: 'Chat Online',
@@ -7,7 +9,7 @@ export const dadosProjetos = [
                     'img2',
                     'img3'
                 ],
-        icon: 'primeira_img'
+        icon: chat_online
     },
     {
         nome: 'Bot Whatsapp',
@@ -21,7 +23,7 @@ export const dadosProjetos = [
                     'img2',
                     'img3'
                 ],
-        icon: 'img_bot_whats'
+        icon: chat_online
     },
     {
         nome: 'Chat Online1',
@@ -31,7 +33,7 @@ export const dadosProjetos = [
                     'img2',
                     'img3'
                 ],
-        icon: 'img_chat_online'
+        icon: chat_online
     },
     {
         nome: 'Bot Whatsapp1',
@@ -45,7 +47,7 @@ export const dadosProjetos = [
                     'img2',
                     'img3'
                 ],
-        icon: 'img_bot_whats'
+        icon: chat_online
     },
     {
         nome: 'Chat Online2',
@@ -55,7 +57,7 @@ export const dadosProjetos = [
                     'img2',
                     'img3'
                 ],
-        icon: 'img_chat_online'
+        icon: chat_online
     },
     {
         nome: 'Bot Whatsapp2',
@@ -69,7 +71,7 @@ export const dadosProjetos = [
                     'img2',
                     'img3'
                 ],
-        icon: 'img_bot_whats'
+        icon: chat_online
     },
     {
         nome: 'Chat Online3',
@@ -79,7 +81,7 @@ export const dadosProjetos = [
                     'img2',
                     'img3'
                 ],
-        icon: 'img_chat_online'
+        icon: chat_online
     },
     {
         nome: 'Bot Whatsapp3',
@@ -93,7 +95,7 @@ export const dadosProjetos = [
                     'img2',
                     'img3'
                 ],
-        icon: 'img_bot_whats'
+        icon: chat_online
     },
     {
         nome: 'Chat Online4',
@@ -103,7 +105,7 @@ export const dadosProjetos = [
                     'img2',
                     'img3'
                 ],
-        icon: 'img_chat_online'
+        icon: chat_online
     },
     {
         nome: 'Bot Whatsapp4',
@@ -117,7 +119,7 @@ export const dadosProjetos = [
                     'img2',
                     'img3'
                 ],
-        icon: 'ultima_img'
+        icon: chat_online
     },
 
     

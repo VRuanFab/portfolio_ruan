@@ -7,6 +7,7 @@
         z-index: 30;
         position: relative;
         background: yellow;
+        width: 7rem;
     }
 
     .mainMoveRight{
@@ -55,17 +56,14 @@
     .closeToMain{
         filter: opacity(65%);
         z-index: 20;
-        height: 0;
-        width: 0;
+        width: 6rem;
     }
 
 
         /* LEFT */
         .leftCarousel.closeToMain{
             bottom: -0.1rem;
-            border-top: 0.4rem solid transparent;
-            border-bottom: 4.6rem solid;
-            border-right: 5rem solid;
+            transform: skew(0deg, 3deg);
         }
         
         .leftCarousel.closeToMain.leftToRightCarousel1{
@@ -102,11 +100,7 @@
 
         /* RIGHT */
         .rightCarousel.closeToMain{
-            bottom: -0.1rem;
-            border-top: 0.4rem solid transparent;
-            border-bottom: 4.6rem solid;
-            border-left: 5rem solid;
-            
+            transform: skew(0deg, -3deg);
             /* animation: closeLeftToRight 1s infinite */
         }
 
@@ -133,17 +127,14 @@
     .closeToMain2{
         filter: opacity(40%);
         z-index: 10;
-        height: 0;
-        width: 0;
+        width: 5rem;
     }
 
         /* LEFT */
         .leftCarousel.closeToMain2{
             bottom: -1rem;
             left: 1rem;
-            border-top: 0.5rem solid transparent;
-            border-bottom: 3.2rem solid;
-            border-right: 3rem solid;
+            transform: skew(0deg, 10deg);
             
             /* animation: closeLeftToRight 1s infinite */
         }
@@ -152,11 +143,7 @@
 
         /* RIGHT */
         .rightCarousel.closeToMain2{
-            bottom: -1rem;
-            right: 1rem;
-            border-top: 0.5rem solid transparent;
-            border-bottom: 3.2rem solid;
-            border-left: 3rem solid;
+            transform: skew(0deg, -10deg);
         }
         /*********/
 /**************************************/

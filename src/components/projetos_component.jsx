@@ -36,8 +36,8 @@ export function SmallPhoto({imagem}) {
 
 
     return(
-        <div className="h-[5rem]">
-            {imagem}
+        <div className="w-full">
+            <img src={imagem} alt="" />
         </div>
     )
 }

@@ -1,11 +1,11 @@
-import python_logo from '../../assets/images/python_logo.svg'
-import javascript_logo from '../../assets/images/javascript_logo.svg'
-import git_logo from '../../assets/images/git_logo.svg'
-import typescript_logo from '../../assets/images/typescript_logo.svg'
-import nodejs_logo from '../../assets/images/nodejs_logo.svg'
-import sql_logo from '../../assets/images/sql_logo.svg'
-import react_logo from '../../assets/images/react_logo.svg'
-import css_logo from '../../assets/images/css_logo.svg'
+import python_logo from '../../assets/images/habilidades/python_logo.svg'
+import javascript_logo from '../../assets/images/habilidades/javascript_logo.svg'
+import git_logo from '../../assets/images/habilidades/git_logo.svg'
+import typescript_logo from '../../assets/images/habilidades/typescript_logo.svg'
+import nodejs_logo from '../../assets/images/habilidades/nodejs_logo.svg'
+import sql_logo from '../../assets/images/habilidades/sql_logo.svg'
+import react_logo from '../../assets/images/habilidades/react_logo.svg'
+import css_logo from '../../assets/images/habilidades/css_logo.svg'
 
 export const dadosConhecimentos = [
     {
