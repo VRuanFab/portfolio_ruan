@@ -12,6 +12,8 @@ export default function Projetos() {
     const [movingRight, setMovingRight] = useState(false)
     const [movingLeft, setMovingLeft] = useState(false)
     const [objProjeto, setObjProjeto] = useState([])
+
+    const [projeto_proximidade, setProjeto_proximidade] = useState({})
     
     useEffect(() => {
         setTimeout(() => {
@@ -19,31 +21,43 @@ export default function Projetos() {
             return item.nome === projetoSelecionado
         })
 
-        
+        proximidade_icons()
         setObjProjeto(projeto_exibido)
         setMovingLeft(false)
         setMovingRight(false)
-        }, 1000)
+        }, 500)
     }, [projetoSelecionado])
+
+    // useEffect(() => {
+    //     console.log(projeto_proximidade)
+
+    // }, [projeto_proximidade])
+
+    const indexAtual = dadosProjetos.findIndex((item) => {
+        return item.nome === projetoSelecionado
+    })
+
+    function proximidade_icons(){
+        setProjeto_proximidade({
+            item_anterior_hidden: (indexAtual - 2 + dadosProjetos.length) % dadosProjetos.length,
+            item_anterior: (indexAtual - 1 + dadosProjetos.length) % dadosProjetos.length,
+            item_atual: indexAtual,
+            item_seguinte: (indexAtual + 1) % dadosProjetos.length,
+            item_seguinte_hidden: (indexAtual + 2) % dadosProjetos.length
+        })
+
+        console.log(projeto_proximidade)
+    }
 
     function moveRight(){
         setMovingRight(true)
-        const indexAtual = dadosProjetos.findIndex((item) => {
-            return item.nome === projetoSelecionado
-        })
-
         const indexDireita = (indexAtual + 1) % dadosProjetos.length
         setProjetoSelecionado(dadosProjetos[indexDireita].nome)
     }
 
     function moveLeft(){
         setMovingLeft(true)
-        const indexAtual = dadosProjetos.findIndex((item) => {
-            return item.nome === projetoSelecionado
-        })
-
         const indexEsquerda = (indexAtual - 1 + dadosProjetos.length) % dadosProjetos.length
-        
         setProjetoSelecionado(dadosProjetos[indexEsquerda].nome)
     }
 
@@ -51,64 +65,6 @@ export default function Projetos() {
         return item.nome === objProjeto.nome
     })
 
-    const objStyle= {
-        close_right1: 'closeToMain rightCarousel relative',
-        close_right2: 'closeToMain2 rightCarousel relative',
-
-        close_left1: 'closeToMain leftCarousel relative',
-        close_left2: 'closeToMain2 leftCarousel relative',
-
-        far: 'notClose hidden'
-    }
-
-    function facilitadorEstilo(indice) {
-        switch (indexDesejado){
-            case indice - 1:
-                return objStyle.close_right1;
-
-            case indice - 2:
-                return objStyle.close_right2;
-
-            case indice + 1:
-                return objStyle.close_left1;
-
-            case indice + 2:
-                return objStyle.close_left2;
-
-            default:
-                return objStyle.far
-        }
-    }
-
-    function beginIcon(whichElement){
-        if (indexDesejado === 0  && whichElement === 0){
-            return objStyle.close_left2
-        }
-        else if (indexDesejado === 0 && whichElement === 1){
-            return objStyle.close_left1
-        }
-        else if (indexDesejado === 1  && whichElement === 1){
-            return objStyle.close_left2
-        }
-        else {
-            return objStyle.far
-        }
-    }
-
-    function endIcon(whichElement){
-        if (indexDesejado === dadosProjetos.length - 1 && whichElement == 0){
-            return objStyle.close_right2
-        }
-        else if (indexDesejado === dadosProjetos.length - 1 && whichElement == 1){
-            return objStyle.close_right1
-        }
-        else if (indexDesejado === dadosProjetos.length - 2 && whichElement == 1){
-            return objStyle.close_right2
-        }
-        else {
-            return objStyle.far
-        }
-    }
 
     return (
         <div className="w-full h-full flex flex-col py-6 gap-5">
@@ -121,57 +77,67 @@ export default function Projetos() {
 
                 <HeadProject imagem={objProjeto.imagem} descricao={objProjeto.descricao}/>
 
-                <div className="flex justify-center w-full gap-6">
+                <div className="flex justify-center w-full relative gap-[35rem] py-8">
 
                 <button onClick={moveLeft} className="h-fit self-center hover:cursor-pointer">
                     <MdArrowCircleLeft className="text-[45px] hover:fill-white"/>
                 </button>
 
-                    <div className="overflow-hidden flex justify-center gap-20 py-4 px-3 relative">
+
+                    <div className="absolute">
+                    <div className="relative">
 
                         {
                             dadosProjetos.map((item, indice) => {
-                                return(
-                                    <>
-                                    {
-                                        (indice - 1 + dadosProjetos.length) % dadosProjetos.length === dadosProjetos.length - 1?
-                                        <>
-                                        <div key={dadosProjetos.length + 1} className={`${beginIcon(0)}`} onClick={() => {setProjetoSelecionado(dadosProjetos[dadosProjetos.length - 2].nome)}}>
-                                            <SmallPhoto imagem={dadosProjetos[dadosProjetos.length - 2].icon}/>
-                                        </div>
+                                if (indice === projeto_proximidade.item_anterior_hidden || indice === projeto_proximidade.item_anterior || indice === projeto_proximidade.item_atual || indice === projeto_proximidade.item_seguinte || indice === projeto_proximidade.item_seguinte_hidden){
 
-                                        <div key={dadosProjetos.length + 2} className={`${beginIcon(1)} ${movingRight? 'leftToRightCarousel1':''}`} onClick={() => {setProjetoSelecionado(dadosProjetos[dadosProjetos.length - 1].nome)}}>
-                                            <SmallPhoto imagem={dadosProjetos[dadosProjetos.length - 1].icon}/>
-                                        </div>
-                                        </>
-                                        :
-                                        ''
+                                    var item_anterior_hidden = indice === projeto_proximidade.item_anterior_hidden
+                                    var item_anterior = indice === projeto_proximidade.item_anterior
+                                    var item_atual = indice === projeto_proximidade.item_atual
+                                    var item_seguinte = indice === projeto_proximidade.item_seguinte
+                                    var item_seguinte_hidden = indice === projeto_proximidade.item_seguinte_hidden
+                                    return(
+                                <>
+                                    <div key={indice} 
+                                    className={
+                                    `${
+                                        movingRight?
+                                            item_atual?'movendoDireita-main'
+                                            :item_seguinte? 'movendoDireita-depois'
+                                            :item_anterior? 'movendoDireita-antes'
+                                            :item_anterior_hidden? 'movendoDireita-hidden-left'
+                                            :item_seguinte_hidden? 'movendoDireita-hidden-right'
+                                            :''
+
+                                        :movingLeft? 
+                                            item_atual? 'movendoEsquerda-main'
+                                            :item_seguinte? 'movendoEsquerda-depois'
+                                            :item_anterior? 'movendoEsquerda-antes'
+                                            :item_anterior_hidden? 'movendoEsquerda-hidden-left'
+                                            :item_seguinte_hidden? 'movendoEsquerda-hidden-right'
+                                            :''
+                                        :''
+                                    } 
+                                    item-${
+                                    item_atual? 'atual'
+                                    :item_seguinte? 'seguinte'
+                                    :item_anterior? 'anterior'
+                                    :item_anterior_hidden? 'anterior-hidden'
+                                    :item_seguinte_hidden? 'seguinte-hidden'
+                                    :''
+                                    } items`
                                     }
-
-                                    <div key={indice} className={item.nome === objProjeto.nome? movingRight? 'mainMoveRight': movingLeft? 'mainMoveLeft':'' + 'mainProject':`${facilitadorEstilo(indice)} ${movingRight? 'leftToRightCarousel1':''}`} onClick={() => {setProjetoSelecionado(item.nome)}}>
+                                    onClick={() => {setProjetoSelecionado(item.nome)}}>
                                         <SmallPhoto imagem={item.icon}/>
-                                    </div>
-
-                                    {
-                                        (indice + 1) % dadosProjetos.length === 0?
-                                        <>
-                                        <div key={dadosProjetos.length + 3} className={`${endIcon(1)}`} onClick={() => {setProjetoSelecionado(dadosProjetos[0].nome)}}>
-                                            <SmallPhoto imagem={dadosProjetos[0].icon}/>
-                                        </div>
-                                        
-                                        <div key={dadosProjetos.length + 4} className={`${endIcon(0)}`} onClick={() => {setProjetoSelecionado(dadosProjetos[1].nome)}}>
-                                            <SmallPhoto imagem={dadosProjetos[1].icon}/>
-                                        </div>
-                                        </>
-                                        :
-                                        ''
-                                    }
-                                    </>
+                                    </div>    
+                                </>
                                 )
+                            }
                             })
                         }
 
                     </div>
+                </div>
 
                 <button onClick={moveRight} className="h-fit self-center hover:cursor-pointer">
                     <MdArrowCircleRight className="text-[45px] hover:fill-white"/>
