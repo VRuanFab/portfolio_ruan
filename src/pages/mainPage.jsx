@@ -1,14 +1,16 @@
 import '../css/pages.css'
 import Habilidades from './habilidades/habilidades'
 import Projetos from './projetos/projetos'
+import SobreMim from './sobre_mim/sobre_mim'
 import HomePage from './homepage'
 
 export default function MainPage() {
     
     const ArrPages = [
                         <HomePage/>,
+                        <SobreMim/>,
                         <Habilidades/>,
-                        <Projetos/>
+                        <Projetos/>,
                     ]
 
     return(
