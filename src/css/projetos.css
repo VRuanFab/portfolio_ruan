@@ -39,12 +39,12 @@
 
 
 /* Indo para a direita */
-.movendoDireita-depois{
+.movendoEsquerda-depois{
     transition: all;
-    animation: animate0MovendoDireita 0.3s linear;
+    animation: animate0MovendoEsquerda 0.3s ease-in;
 }
 
-@keyframes animate0MovendoDireita{
+@keyframes animate0MovendoEsquerda{
     from {
         opacity: 50%;
     }
@@ -54,12 +54,12 @@
     }
 }
 
-.movendoDireita-main{
+.movendoEsquerda-main{
     transition: all;
-    animation: animate1MovendoDireita 0.3s linear;
+    animation: animate1MovendoEsquerda 0.3s ease-in;
 }
 
-@keyframes animate1MovendoDireita{
+@keyframes animate1MovendoEsquerda{
     from {
         left: calc(0 + 0rem);
         opacity: 100%;
@@ -70,12 +70,12 @@
     }
 }
 
-.movendoDireita-antes{
+.movendoEsquerda-antes{
     transition: all;
-    animation: animate2MovendoDireita 0.3s linear;
+    animation: animate2MovendoEsquerda 0.3s ease-in;
 }
 
-@keyframes animate2MovendoDireita{
+@keyframes animate2MovendoEsquerda{
     from {
         left: calc(-15rem + 0rem);
         opacity: 50%;
@@ -86,13 +86,13 @@
     }
 }
 
-.movendoDireita-hidden-left{
+.movendoEsquerda-hidden-left{
     transition: all;
     opacity: 0%;
-    animation: animateMovendoDireita_hidden 0.3s linear;
+    animation: animateMovendoEsquerda_hidden 0.3s ease-in;
 }
 
-@keyframes animateMovendoDireita_hidden{
+@keyframes animateMovendoEsquerda_hidden{
     from {
         opacity: 2%;
         left: calc(-16rem + 0rem);
@@ -106,12 +106,12 @@
 
 
 /* Indo para a esquerda */
-.movendoEsquerda-depois{
+.movendoDireita-depois{
     transition: all;
-    animation: animate0MovendoEsquerda 0.3s linear;
+    animation: animate0MovendoDireita 0.3s ease-in;
 }
 
-@keyframes animate0MovendoEsquerda{
+@keyframes animate0MovendoDireita{
     from {
         opacity: 50%;
     }
@@ -121,12 +121,12 @@
     }
 }
 
-.movendoEsquerda-main{
+.movendoDireita-main{
     transition: all;
-    animation: animate1MovendoEsquerda 0.3s linear;
+    animation: animate1MovendoDireita 0.3s ease-in;
 }
 
-@keyframes animate1MovendoEsquerda{
+@keyframes animate1MovendoDireita{
     from {
         opacity: 100%;
     }
@@ -136,12 +136,12 @@
     }
 }
 
-.movendoEsquerda-antes{
+.movendoDireita-antes{
     transition: all;
-    animation: animate2MovendoEsquerda 0.3s linear;
+    animation: animate2MovendoDireita 0.3s ease-in;
 }
 
-@keyframes animate2MovendoEsquerda{
+@keyframes animate2MovendoDireita{
     from {
         opacity: 50%;
     }
@@ -151,13 +151,13 @@
     }
 }
 
-.movendoEsquerda-hidden-right{
+.movendoDireita-hidden-right{
     transition: all;
     opacity: 0%;
-    animation: animateMovendoEsquerda_hidden 0.3s alternate;
+    animation: animateMovendoDireita_hidden 0.3s alternate;
 }
 
-@keyframes animateMovendoEsquerda_hidden{
+@keyframes animateMovendoDireita_hidden{
     from {
         opacity: 2%;
         left: calc(10rem + 0rem);

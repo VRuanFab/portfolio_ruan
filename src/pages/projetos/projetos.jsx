@@ -25,7 +25,7 @@ export default function Projetos() {
         setObjProjeto(projeto_exibido)
         setMovingLeft(false)
         setMovingRight(false)
-        }, 300)
+        }, 290)
     }, [projetoSelecionado])
 
     const indexAtual = dadosProjetos.findIndex((item) => {
@@ -61,7 +61,7 @@ export default function Projetos() {
                 <h1 className="text-[5rem]">Projetos</h1>
             </div>
             
-            <div className="flex flex-col w-full h-[80%] place-content-between px-[4rem]">
+            <div className="flex flex-col w-full h-[44rem] place-content-between px-[4rem]">
 
                 <HeadProject imagem={objProjeto.imagem} descricao={objProjeto.descricao}/>
 
@@ -113,10 +113,11 @@ export default function Projetos() {
                                     :item_anterior_hidden? 'anterior-hidden'
                                     :item_seguinte_hidden? 'seguinte-hidden'
                                     :''
-                                    } items`
+                                    } items text-center text-md`
                                     }
                                     onClick={() => {setProjetoSelecionado(item.nome)}}>
                                         <SmallPhoto imagem={item.icon}/>
+                                        {item.nome}
                                     </div>    
                                 </>
                                 )
