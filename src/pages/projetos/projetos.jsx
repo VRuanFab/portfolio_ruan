@@ -25,13 +25,8 @@ export default function Projetos() {
         setObjProjeto(projeto_exibido)
         setMovingLeft(false)
         setMovingRight(false)
-        }, 500)
+        }, 300)
     }, [projetoSelecionado])
-
-    // useEffect(() => {
-    //     console.log(projeto_proximidade)
-
-    // }, [projeto_proximidade])
 
     const indexAtual = dadosProjetos.findIndex((item) => {
         return item.nome === projetoSelecionado
@@ -45,8 +40,6 @@ export default function Projetos() {
             item_seguinte: (indexAtual + 1) % dadosProjetos.length,
             item_seguinte_hidden: (indexAtual + 2) % dadosProjetos.length
         })
-
-        console.log(projeto_proximidade)
     }
 
     function moveRight(){
@@ -61,11 +54,6 @@ export default function Projetos() {
         setProjetoSelecionado(dadosProjetos[indexEsquerda].nome)
     }
 
-    const indexDesejado = dadosProjetos.findIndex((item) => {
-        return item.nome === objProjeto.nome
-    })
-
-
     return (
         <div className="w-full h-full flex flex-col py-6 gap-5">
 
@@ -73,7 +61,7 @@ export default function Projetos() {
                 <h1 className="text-[5rem]">Projetos</h1>
             </div>
             
-            <div className="flex flex-col w-full h-[80%] bg-pink-600 place-content-between">
+            <div className="flex flex-col w-full h-[80%] place-content-between px-[4rem]">
 
                 <HeadProject imagem={objProjeto.imagem} descricao={objProjeto.descricao}/>
 

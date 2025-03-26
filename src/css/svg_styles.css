@@ -1,10 +1,12 @@
 .shadow_style{
     filter: brightness(30%) saturate(10%);
     transition: all;
-
+    
     &:hover{
         filter: brightness(105%);
         transition-delay: 2s;
         transition: all;
+        filter: drop-shadow(0 0 4rem white);
+
     }
 }

@@ -41,7 +41,7 @@
 /* Indo para a direita */
 .movendoDireita-depois{
     transition: all;
-    animation: animate0MovendoDireita 0.5s linear;
+    animation: animate0MovendoDireita 0.3s linear;
 }
 
 @keyframes animate0MovendoDireita{
@@ -56,7 +56,7 @@
 
 .movendoDireita-main{
     transition: all;
-    animation: animate1MovendoDireita 0.5s linear;
+    animation: animate1MovendoDireita 0.3s linear;
 }
 
 @keyframes animate1MovendoDireita{
@@ -72,7 +72,7 @@
 
 .movendoDireita-antes{
     transition: all;
-    animation: animate2MovendoDireita 0.5s linear;
+    animation: animate2MovendoDireita 0.3s linear;
 }
 
 @keyframes animate2MovendoDireita{
@@ -89,7 +89,7 @@
 .movendoDireita-hidden-left{
     transition: all;
     opacity: 0%;
-    animation: animateMovendoDireita_hidden 0.5s linear;
+    animation: animateMovendoDireita_hidden 0.3s linear;
 }
 
 @keyframes animateMovendoDireita_hidden{
@@ -108,7 +108,7 @@
 /* Indo para a esquerda */
 .movendoEsquerda-depois{
     transition: all;
-    animation: animate0MovendoEsquerda 0.5s linear;
+    animation: animate0MovendoEsquerda 0.3s linear;
 }
 
 @keyframes animate0MovendoEsquerda{
@@ -123,7 +123,7 @@
 
 .movendoEsquerda-main{
     transition: all;
-    animation: animate1MovendoEsquerda 0.5s linear;
+    animation: animate1MovendoEsquerda 0.3s linear;
 }
 
 @keyframes animate1MovendoEsquerda{
@@ -138,7 +138,7 @@
 
 .movendoEsquerda-antes{
     transition: all;
-    animation: animate2MovendoEsquerda 0.5s linear;
+    animation: animate2MovendoEsquerda 0.3s linear;
 }
 
 @keyframes animate2MovendoEsquerda{
@@ -154,7 +154,7 @@
 .movendoEsquerda-hidden-right{
     transition: all;
     opacity: 0%;
-    animation: animateMovendoEsquerda_hidden 0.5s alternate;
+    animation: animateMovendoEsquerda_hidden 0.3s alternate;
 }
 
 @keyframes animateMovendoEsquerda_hidden{

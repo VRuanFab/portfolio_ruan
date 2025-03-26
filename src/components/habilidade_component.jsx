@@ -1,6 +1,3 @@
-
-
-
 export default function Habilidade_componente({nome, img, className}) {
 
     return(
