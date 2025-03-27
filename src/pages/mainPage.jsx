@@ -1,27 +1,20 @@
 import '../css/pages.css'
-import Habilidades from './habilidades/habilidades'
-import Projetos from './projetos/projetos'
-import SobreMim from './sobre_mim/sobre_mim'
-import HomePage from './homepage'
+import {mainPage_routes} from '../routes/imports/mainPage'
 
 export default function MainPage() {
-    
-    const ArrPages = [
-                        <HomePage/>,
-                        <SobreMim/>,
-                        <Habilidades/>,
-                        <Projetos/>,
-                    ]
+
+    console.log(mainPage_routes)
 
     return(
         <>
         <div className="snap-y snap-mandatory h-screen overflow-y-scroll">
 
             {
-                ArrPages.map((pagina, indice) => {
+                mainPage_routes.map((pagina, indice) => {
+                    console.pagina
                     return (
-                        <div key={indice} className='snap-center h-screen'>
-                            {pagina}
+                        <div key={indice} className={`snap-center h-screen ${pagina.name}`}>
+                            {pagina.element}
                         </div>
                     )
                 })
