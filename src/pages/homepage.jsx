@@ -1,4 +1,5 @@
 import { mainPage_routes } from "../routes/imports/mainPage"
+import { DropDown } from "../components/dropDown"
 
 export default function HomePage() {
 
@@ -53,7 +54,8 @@ export default function HomePage() {
             <button onClick={voltarInicio}
             className="fixed bottom-5 right-5"
             >
-                Voltar ao inicio
+                {/* Voltar ao inicio */}
+                <DropDown/>
             </button>
         </div>
     )

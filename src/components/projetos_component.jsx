@@ -34,7 +34,6 @@ export function HeadProject ({imagem, descricao}) {
 
 export function SmallPhoto({imagem}) {
 
-
     return(
         <div className="w-full flex place-content-center">
             <img src={imagem} alt="" className="w-[3.5rem]"/>

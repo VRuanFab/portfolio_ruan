@@ -11,7 +11,6 @@ export default function MainPage() {
 
             {
                 mainPage_routes.map((pagina, indice) => {
-                    console.pagina
                     return (
                         <div key={indice} className={`snap-center h-screen ${pagina.name}`}>
                             {pagina.element}
