@@ -1,21 +1,18 @@
 import { mainPage_routes } from "../routes/imports/mainPage"
 import { DropDown } from "../components/dropDown"
+import '../css/homepage.css'
 
 export default function HomePage() {
 
-    const descer = (pagina) => {
+    const movimentar = (pagina) => {
         document.querySelectorAll(`.${pagina}`)[0].scrollIntoView({behavior: 'smooth'})
-    }
-
-    const voltarInicio = () => {
-        document.querySelectorAll('.HomePage')[0].scrollIntoView({behavior: 'smooth'})
     }
 
     return(
         <div className="h-full w-full grid grid-cols-3 items-center px-20">
             <div className="col-span-2 w-full h-[80%] flex place-items-center pl-15">
             
-                <h1 className="h-fit text-[11rem] font-bold text-white">
+                <h1 className="h-fit text-[11rem] font-bold text-white nome_text">
                     Ruan <br/> Fabricio
                 </h1>
             </div>
@@ -33,7 +30,7 @@ export default function HomePage() {
                         if (page.name != 'HomePage')
                             return(
                                 <>
-                                <button onClick={(e) => descer(e.target.value)} value={page.name}
+                                <button onClick={(e) => movimentar(e.target.value)} value={page.name}
                                 className={
                                     `
                                     hover:cursor-pointer hover:text-white text-xl
@@ -51,12 +48,11 @@ export default function HomePage() {
             </div>
 
 
-            <button onClick={voltarInicio}
-            className="fixed bottom-5 right-5"
+            <div
+            className="fixed bottom-5 right-5 z-100"
             >
-                {/* Voltar ao inicio */}
-                <DropDown/>
-            </button>
+                <DropDown onClick={(e) => movimentar(e.target.value)}/>
+            </div>
         </div>
     )
 }

@@ -3,8 +3,6 @@ import {mainPage_routes} from '../routes/imports/mainPage'
 
 export default function MainPage() {
 
-    console.log(mainPage_routes)
-
     return(
         <>
         <div className="snap-y snap-mandatory h-screen overflow-y-scroll">

@@ -7,18 +7,22 @@ import HomePage from '../../pages/homepage'
 export const mainPage_routes = [
                     {
                         name: 'HomePage',
-                        element: <HomePage/>
+                        element: <HomePage/>,
+                        name_drop_list: 'Página inicial'
                     },
                     {
                         name: 'SobreMim',
-                        element: <SobreMim/>
+                        element: <SobreMim/>,
+                        name_drop_list: 'Sobre mim'
                     },
                     {
                         name: 'Habilidades',
-                        element: <Habilidades/>
+                        element: <Habilidades/>,
+                        name_drop_list: 'Habilidades'
                     },
                     {
                         name: 'Projetos',
-                        element: <Projetos/>
+                        element: <Projetos/>,
+                        name_drop_list: 'Projetos'
                     },
                 ]
